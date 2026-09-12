@@ -1,0 +1,15 @@
+{% extends "empmngt/navbar.html" %}
+{% load static %}
+{% block nav_block %}
+<section class='container'>
+<h1 class='text-center fw-bold mt-5'>Latest News</h1>
+<div class='container mt-3'>
+<h3>Details</h3>
+<p>{{ d.Details }}</p>
+</div>
+<div class='text-end mt-5'>
+<a href='/newsupdate/{{d.id}}/'><button class='btn btn-warning'>Modify News</button></a>
+<a href='/newsdelete/{{d.id}}/'><button class='btn btn-danger'>Delete News</button></a>
+</div>
+</section>
+{%endblock%}

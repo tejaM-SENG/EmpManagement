@@ -1,0 +1,42 @@
+"""
+URL configuration for project project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/6.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from empmngt import views
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('news/', views.news),
+    path('home/', views.home),
+    path('calender/', views.calender),
+    path('viewemp/', views.viewemp),
+    path('addnews/', views.addnews),
+    path('jobs/', views.jobs),
+    path('jobopen/', views.jobopen),
+    path('holidays/', views.holidays),
+    path('addemp/', views.employee),
+    path('hrmanager/', views.dashboardview),
+    path('empdash/', views.empdashboard),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('login/', views.loginview),
+    path('logout/', views.logoutview),
+    path('download/',views.download_csv),
+    path('empupdate/<int:id>/',views.updateview),
+    path('empdelete/<int:id>/', views.deleteview),
+    path('newsupdate/<int:id>/',views.newsupdate),
+    path('newsdelete/<int:id>/',views.newsdelete),
+]

@@ -1,0 +1,14 @@
+{%extends 'empmngt/navbar.html'%}
+{%block nav_block%}
+<section class='container my-5'>
+    <center><h1 class='fw-bold mt-3'>HR Admin Page</h1></center>
+    <div class='text-end'><a href='/logout/'><button class='btn btn-danger'>Logout</button></a></div>
+    <div class="d-grid gap-3 col-6 mx-auto px-5">
+    <a href='/addemp'><button class='form-control btn btn-warning'>Add Employee</button>
+    <a href='/viewemp'><button class='form-control btn btn-warning'>View Employee Data</button>
+    <a href='/addnews'><button class='form-control btn btn-warning'>Add Latest News</button>
+    <a href='/calender'><button class='form-control btn btn-warning'>Add Year Calender</button>
+    <a href='/jobopen'><button class='form-control btn btn-warning'>Job Openings</button>
+    </div>
+</section>
+{%endblock%}

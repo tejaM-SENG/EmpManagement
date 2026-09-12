@@ -1,0 +1,28 @@
+{% extends "empmngt/navbar.html" %}
+{% load static %}
+{% block nav_block %}
+<section class='container'>
+<h1 class='text-center fw-bold mt-5'>Holidays Calender</h1>
+<div class='container mt-3'>
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Ocassion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in d %}
+            <tr>
+                <td>{{i.Date}}</td>
+                <td>{{i.Occasion}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+<div class='text-end my-5'>
+<a href='/news'><button class='btn btn-warning'>Latest News</button></a>
+</div>
+</section>
+{%endblock%}

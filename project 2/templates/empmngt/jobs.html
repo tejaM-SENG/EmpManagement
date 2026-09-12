@@ -1,0 +1,32 @@
+{% extends "empmngt/navbar.html" %}
+{% load static %}
+{% block nav_block %}
+<section class='container'>
+<h1 class='text-center fw-bold my-5'>Job Openings</h1>
+<div class='container'>
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th>Role</th>
+                <th>Experience</th>
+                <th>Skills</th>
+                <th>Current CTC</th>
+                <th>Notice Period</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in d %}
+            <tr>
+                <td>{{i.Role}}</td>
+                <td>{{i.Experience}}</td>
+                <td>{{i.Skills}}</td>
+                <td>{{i.CTC}}</td>
+                <td>{{i.Notice_Period}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+</div>
+</section>
+{%endblock%}

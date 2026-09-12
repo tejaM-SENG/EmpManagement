@@ -1,0 +1,45 @@
+{% extends "empmngt/navbar.html" %}
+{% load static %}
+{% block nav_block %}
+<section class='container'>
+<h1 class='text-center fw-bold my-5'>Employee Data</h1>
+<div class='container'>
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th>Emp Name</th>
+                <th>Emp ID</th>
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Annual CTC</th>
+                <th>Experience</th>
+                <th>HR Section</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in d %}
+            <tr>
+                <td>{{i.Name}}</td>
+                <td>{{i.Emp_ID}}</td>
+                <td>{{i.Date_of_Joining}}</td>
+                <td>{{i.Designation}}</td>
+                <td>{{i.Department}}</td>
+                <td>{{i.Annual_CTC}}</td>
+                <td>{{i.Experience}}</td>
+                <td>
+                    <a href='/empupdate/{{i.id}}/'><button class='btn btn-outline-primary'>Update</button></a>
+                    <a href='/empdelete/{{i.id}}/'><button class='btn btn-outline-danger'>Delete</button></a>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+</div>
+<div class='container text-end'>
+    <a href='/download'><button class='btn btn-warning'>Download Data</button></a>
+    <a href='/addemp'><button class='btn btn-warning'>Add Employee</button></a>
+    <a href='/hrmanager'><button class='btn btn-warning'><i class='bi bi-arrow-left-circle-fill'></i> Back</button></a>
+</div>
+</section>
+{%endblock%}
