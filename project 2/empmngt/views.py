@@ -94,7 +94,7 @@ def newsupdate(request, id):
 def newsdelete(request, id):
     data = News.objects.get(id=id)
     data.delete()
-    return redirect('/home')
+    return redirect('/')
 
 def deleteview(request, id):
     data = Employee.objects.get(id=id)
